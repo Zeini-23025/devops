@@ -20,4 +20,5 @@ RUN npm run build
 EXPOSE 3000
 
 # Lancer l'application React avec 'vite preview' sur le port 3000
-CMD ["npm", "run", "preview", "--", "--port", "3000"]
+CMD ["npm", "run", "preview", "--", "--port", "3000", "--host"]
+
