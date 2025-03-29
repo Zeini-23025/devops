@@ -13,11 +13,11 @@ RUN npm install
 # Copier le reste des fichiers du projet
 COPY . .
 
-# Construire l'application React
+# Construire l'application React avec Vite
 RUN npm run build
 
-# Exposer le port (si nécessaire)
+# Exposer le port utilisé par Vite en mode preview
 EXPOSE 3000
 
-# Lancer l'application React avec un serveur comme 'serve'
-CMD ["npm", "run", "preview"]
+# Lancer l'application React avec 'vite preview' sur le port 3000
+CMD ["npm", "run", "preview", "--", "--port", "3000"]
