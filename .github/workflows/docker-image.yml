@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build React Docker image
-      working-directory: ./client
+      working-directory: ./clinet 
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
 
