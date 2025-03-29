@@ -23,12 +23,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build React Docker image
-      working-directory: ./react
+      working-directory: ./client
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
 
     - name: Build Spring Boot Docker image
-      working-directory: ./spring-boot
+      working-directory: ./server
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/spring-boot-app:latest .
 
