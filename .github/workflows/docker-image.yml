@@ -1,0 +1,41 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build React Docker image
+      working-directory: ./react
+      run: |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
+
+    - name: Build Spring Boot Docker image
+      working-directory: ./spring-boot
+      run: |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/spring-boot-app:latest .
+
+    - name: Push React Docker image to Docker Hub
+      run: |
+        docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+
+    - name: Push Spring Boot Docker image to Docker Hub
+      run: |
+        docker push ${{ secrets.DOCKER_USERNAME }}/spring-boot-app:latest
