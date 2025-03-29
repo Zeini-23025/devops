@@ -1,24 +1,23 @@
-# Utiliser une image de base Node.js
-FROM node:16
+# Utilisation de l'image officielle Node.js
+FROM node:18
 
-# Définir le répertoire de travail
+# Définir le répertoire de travail dans l'image Docker
 WORKDIR /app
 
-# Copier package.json et package-lock.json
+# Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
 
 # Installer les dépendances
 RUN npm install
 
-# Copier le reste du code source
+# Copier le reste des fichiers du projet
 COPY . .
 
 # Construire l'application React
 RUN npm run build
 
-# Servir l'application React (vous pouvez utiliser un serveur comme serve)
-RUN npm install -g serve
-CMD ["serve", "-s", "build", "-l", "5000"]
+# Exposer le port (si nécessaire)
+EXPOSE 3000
 
-# Exposer le port
-EXPOSE 5000
+# Lancer l'application React avec un serveur comme 'serve'
+CMD ["npm", "run", "preview"]
