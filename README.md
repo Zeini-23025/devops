@@ -1,23 +1,45 @@
 🏆 **Nom de l'équipe** : 見つかりません
 
-# Gestion des Revenus - Application Web
+# Gestion des Revenus Immobiliers - Application Web
 
-📌 **Objectif**
+## Description du projet
 
-Cette application permet aux entreprises de gérer efficacement leurs revenus à travers une interface web moderne, intuitive et sécurisée.
+Le projet **Gestion des Revenus Immobiliers - Application Web** est une plateforme développée en **React** pour le frontend et **Django** pour le backend. L'application permet de gérer les revenus générés par les propriétés immobilières et facilite les tâches administratives liées aux biens immobiliers.
 
-📚 **Description du Projet**
+## Objectifs
 
-L'application permet la création, la consultation, la modification et la suppression des enregistrements liés aux revenus. Elle intègre également des fonctions de calcul de taxes et de bonus, ainsi que des statistiques sur les revenus.
+- Simplifier la gestion des propriétés et des locations via une interface React interactive.
+- Suivre efficacement les revenus provenant des loyers et gérer les paiements.
+- Gérer les informations des locataires, des paiements et des propriétés avec une architecture backend Django robuste.
+- Offrir une solution numérique pour améliorer l'administration des biens immobiliers.
 
-🚀 **Fonctionnalités**
+## Technologies utilisées
 
-- **Gestion des revenus** : Ajout, modification, suppression et consultation des entrées.
-- **Recherche et filtrage** : Par catégorie, période, montant, etc.
-- **Calculs automatiques** : Taxes, bonus, total net.
-- **Interface utilisateur moderne** : Réactive et intuitive avec React.js.
-- **API REST sécurisée** : Développée avec Django REST Framework.
-- **Conteneurisation** : Docker & Docker Compose.
+- **Frontend** : React, HTML5, CSS3, JavaScript
+- **Backend** : Django, Django Rest Framework
+- **API** : RESTful API pour l’interaction entre le frontend et le backend
+
+## Fonctionnalités principales
+
+- Gestion des propriétés immobilières.
+- Suivi des locataires et de leurs informations.
+- Gestion des paiements des loyers et des revenus.
+- Authentification des utilisateurs avec Django.
+- Affichage dynamique des informations via React.
+
+## Installation
+
+### Prérequis
+
+Avant d'exécuter ce projet, assurez-vous d'avoir les prérequis suivants :
+
+- Node.js (pour React)
+- Python 3.8 ou supérieur (pour Django)
+- Django 3.2 ou supérieur
+- Django Rest Framework
+- Git ou Docker 
+
+
 
 🐳 **Conteneurisation avec Docker**
 
